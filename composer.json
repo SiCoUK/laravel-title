@@ -1,0 +1,12 @@
+{
+    "name": "sicouk/laravel-title",
+    "description": "Simple Laravel page title handler.",
+    "authors": [
+        {
+            "name": "Simon Corless",
+            "email": "simon@sico.co.uk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
