@@ -49,7 +49,7 @@ class Title
     }
     
     /**
-     * 
+     * Set the specific page title
      * 
      * @param string $title
      */
@@ -66,6 +66,16 @@ class Title
     public function setSeperator($seperator)
     {
         $this->seperator = $seperator;
+    }
+    
+    /**
+     * Retrieve the full title
+     * 
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->toString();
     }
     
     /**
@@ -87,5 +97,14 @@ class Title
         $title = array_reverse($title);
         
         return implode($this->seperator, $title);
+    }
+    
+    /**
+     * Return the full title as a string
+     * 
+     * @return string
+     */
+    public function __toString() {
+        return $this->toString();
     }
 }
