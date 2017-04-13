@@ -34,6 +34,21 @@ class Title
      * 
      * @return string
      */
+    public function getLastTitle()
+    {
+        if (empty($this->title)) {
+            // Return the default app name
+            return \config::get('app.name');
+        }
+        
+        return end($this->title);
+    }
+    
+    /**
+     * Return the last entry in the collection as the current page title
+     * 
+     * @return string
+     */
     public function getPageTitle()
     {
         if (!empty($this->pageTitle)) {
@@ -45,7 +60,7 @@ class Title
             return \config::get('app.name');
         }
         
-        return array_pop($this->title);
+        return end($this->title);
     }
     
     /**
@@ -94,9 +109,7 @@ class Title
         $title = array_merge([\config::get('app.name')], $this->title);
         
         // Reverse the array for the page title
-        $title = array_reverse($title);
-        
-        return implode($this->seperator, $title);
+        return implode($this->seperator, array_reverse($title));
     }
     
     /**
